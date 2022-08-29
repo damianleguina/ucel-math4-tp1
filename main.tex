@@ -1,0 +1,112 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+%Information to be included in the title page:
+\title{Ecuaciones diferenciales}
+\author{Leguina, Damián Adolfo}
+\institute{UCEL – Universidad del Centro Educativo Latinoamericano}
+\date{2022}
+
+\usetheme{Copenhagen}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Introducción}
+
+    El modelo SIR, es un modelo matemático formulado por A. G. McKendrick y W. O Kermack en 1927. Es un modelo simple deterministico.
+
+    Para este Trabajo Práctico vamos a analizar el reporte "A SIR model assumption for the spread of COVID-19 in different communities" (Hipótesis de modelo SIR para la propagación de COVID-19 en diferentes comunidades) de Ian Cooper, Argha Mondal y Chris G. Antonopoulos.
+
+\end{frame}
+
+\begin{frame}
+
+    \frametitle{Modelo SIR}
+
+    El modelo SIR, o modelo \emph{xyz}, es un modelo compartimental deterministico simple desarrollado por A. G. McKendrick and W. O
+    Kermack in 1927 para describir la propagación de enfermedades.
+    
+    McKendrick and Kermack propusieron el siguiente sistema de ecuaciones diferenciales lineales ordinarias:
+
+    \[
+        \frac{\partial S}{\partial t}=-\beta S(t)I(t),
+    \]
+
+    \[
+        \frac{\partial I}{\partial t}=\beta S(t)I(t)-\gamma I(t), 
+    \]
+
+    \[
+        \frac{\partial R}{\partial t}=\gamma I(t)
+    \]
+
+    Con condiciones iniciales \( x(0)= N_1 \geq 0 \), \( y(0)= N_2 \geq 0 \) y \( z(0)= N_3 \geq 0 \), \(N_i \in \mathbb{R}, i = 1, 2 ,3 \), y la tasa de transmisión \(\beta\) y de recuperación \(\gamma\) son positivos.
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelo SIR}
+
+    En este modelo, se considera una población con tres componentes:
+
+    \begin{itemize}
+        \item Susceptibles \(S(t)\): Representa a los individuos que no han sido infectados hasta el instante \emph{t}, o aquellos individuos que son susceptibles a la enfermedad.
+        \item Infectados \(I(t)\): Denota a los individuos infectados con la enfermedad y son capaces de propagarla a individuos susceptibles.
+        \item Recuperados \(R(t)\): Son individuos que se recuperaron de la enfermedad. Los individuos de esta categoría ya no pueden volver a infectarse o transmitir a otros.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Reporte de I. Cooper, A. Mondal and C.G. Antonopoulos}
+
+    Este estudio fue diseñado con la idea de que en el SIR clásico no toma en consideración un nuevo foco de infección, lo que propusieron en estos casos es la posibilidad de reajustar \(S\) en el instante \(t_s\) y volver a realizar las observaciones con los datos actualizados.
+
+    Este reajuste retroactivo no esta considerado en el sistema de ecuaciones, si no que sirve para minimizar el error entre el modelo y la realidad cuando la población susceptible varia en la realidad.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Evolución de \(I\)}
+
+    La evolución de \(I\) esta determinada por la segunda ecuación del sistema de ecuaciones, siendo \(\beta\) y \(\gamma\) constantes, podemos definir la tasa de reproducción \(\rho\) como:
+
+    \[
+        \rho = \frac{\beta S(t)}{\gamma}
+    \]
+
+    Si \(\rho < 1\), la población de \(I\) va a decrecer monótonamente, y si es mayor, va a crecer.
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Aplanar la curva}
+
+    El significado de aplanar la curva es tomar medidas para bajar el número de infectados, como este estudio analiza las medidas tomadas por diferentes países, se puede apreciar el impacto que tuvieron las medidas en comunidades específicas, con medidas más restrictivas, como las tomadas por Corea del Sur, demostrando tener efectividad para contener la dispersión del virus.
+
+    La conclusión de los investigadores es priorizar las medidas de aislamiento, notando que más allá del impacto económico y social, demuestran tener efectividad.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Autores del estudio}
+
+    \begin{itemize}
+        \item Ian Cooper, School of Physics, The University of Sydney, Sydney, Australia.
+        \item Argha Mondal, Department of Mathematical Sciences, University of Essex, Wivenhoe Park, UK.
+        \item Chris G. Antonopoulos, Department of Mathematical Sciences, University of Essex, Wivenhoe Park, UK.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fuentes}
+
+    \begin{itemize}
+        \item A SIR model assumption for the spread of COVID-19 in different communities. - I. Cooper, A. Mondal and C.G. Antonopoulos [\href{https://www.sciencedirect.com/science/article/pii/S0960077920304549}{Link}]
+        \item A contribution to the mathematical theory of epidemics - William Ogilvy Kermack, A. G. McKendrick [\href{https://royalsocietypublishing.org/doi/10.1098/rspa.1927.0118}{Link}]
+        \item Modeling epidemics with differential equations - Beckley R, Weatherspoon C, Alexander M, Chandler M, Johnson A, Bhatt GS [\href{https://www.tnstate.edu/mathematics/mathreu/filesreu/GroupProjectSIR.pdf}{Link}]
+    \end{itemize}
+\end{frame}
+
+\end{document}
